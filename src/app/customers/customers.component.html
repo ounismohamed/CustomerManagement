@@ -1,0 +1,45 @@
+<span class="glyphicon glyphicon-user" style="margin-left: 15px;margin-top: 15px"></span> Customers
+
+<div class="row" style="margin-top: 15px;margin-left: 15px">
+  <div class="col-sm-4">Filter : <input type="text" style="margin-left: 10px" [ngModel]="filter"></div>
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <button class="btn btn-default" routerLink="customer">Add New Customer</button>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 15px">
+  <table class="table">
+    <thead>
+    <tr>
+      <th></th>
+      <th><button class="btn btn-default" (click) = "sortByFirstName()"><b>Firstname</b></button></th>
+      <th><button class="btn btn-default" (click) = "sortByLastName()"><b>Lastname</b></button></th>
+      <th><button class="btn btn-default"><b>Address</b></button></th>
+      <th><button class="btn btn-default"><b>City</b></button></th>
+      <th><button class="btn btn-default"><b>State</b></button></th>
+      <th><button class="btn btn-default"><b>Order Total</b></button></th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--<tr>-->
+      <!--<td><span class="glyphicon glyphicon-user"></span></td>-->
+      <!--<td>Michelle</td>-->
+      <!--<td>Avery</td>-->
+      <!--<td>346 Cedar Ave</td>-->
+      <!--<td>Dallas</td>-->
+      <!--<td>Texas</td>-->
+      <!--<td>$ 1.699.89</td>-->
+    <!--</tr>-->
+    <tr *ngFor="let x of customers">
+      <td><span class="glyphicon glyphicon-user"></span></td>
+      <td>{{x.firstname}}</td>
+      <td>{{x.lastname}}</td>
+      <td>{{x.address}}</td>
+      <td>{{x.city}}</td>
+      <td>{{x.state}}</td>
+      <td>$1000</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
